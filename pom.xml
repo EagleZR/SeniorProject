@@ -8,5 +8,48 @@
     <artifactId>SeniorProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <contributors>
+        <contributor>
+            <name>Mark Zeagler</name>
+            <organization>Kennesaw State University</organization>
+            <email>mark.zeagler@gmail.com</email>
+            <roles></roles>
+        </contributor>
+        <contributor>
+            <name>Aisha Siddiqui</name>
+            <organization>Kennesaw State University</organization>
+            <email></email>
+            <roles></roles>
+        </contributor>
+        <contributor>
+            <name>Drashtee Parmar</name>
+            <organization>Kennesaw State University</organization>
+            <email></email>
+            <roles></roles>
+        </contributor>
+        <contributor>
+            <name>Michael Bowman</name>
+            <organization>Kennesaw State University</organization>
+            <email></email>
+            <roles></roles>
+        </contributor>
+        <contributor>
+            <name>Shamita Hattangady</name>
+            <organization>Kennesaw State University</organization>
+            <email></email>
+            <roles></roles>
+        </contributor>
+    </contributors>
+
+    <properties>
+        <maven.compiler.target>1.10</maven.compiler.target>
+        <maven.compiler.source>10</maven.compiler.source>
+    </properties>
+
+    <build>
+        <sourceDirectory>src/main/java/ksu.fall2018.seniorproject.group3.SeniorProject</sourceDirectory>
+        <testSourceDirectory>src/test/java/ksu.fall2018.seniorproject.group3.SeniorProject</testSourceDirectory>
+    </build>
+
 
 </project>
