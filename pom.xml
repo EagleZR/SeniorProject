@@ -42,13 +42,54 @@
     </contributors>
 
     <properties>
-        <maven.compiler.target>1.10</maven.compiler.target>
-        <maven.compiler.source>10</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
     <build>
-        <sourceDirectory>src/main/java/ksu.fall2018.seniorproject.group3.SeniorProject</sourceDirectory>
-        <testSourceDirectory>src/test/java/ksu.fall2018.seniorproject.group3.SeniorProject</testSourceDirectory>
+        <sourceDirectory>${project.basedir}/src/main/java/ksu.fall2018.seniorproject.group3.SeniorProject
+        </sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java/ksu.fall2018.seniorproject.group3.SeniorProject
+        </testSourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <includes>
+                        <include>
+                            ksu.fall2018.seniorproject.group3.SeniorProject.SystemTest
+                        </include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <plugin> <!-- duplicated to ensure it runs after the image is created -->
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources-for-tests</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}\test-classes</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
     </build>
 
     <dependencies>
@@ -98,6 +139,22 @@
             <version>5.3.0-RC1</version>
             <scope>test</scope>
             <optional>true</optional>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.ini4j/ini4j -->
+        <dependency>
+            <groupId>org.ini4j</groupId>
+            <artifactId>ini4j</artifactId>
+            <version>0.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
     </dependencies>
 
