@@ -77,7 +77,7 @@ class SystemTest extends ConfigUser {
 			ProducerRecord<Long, String> producerRecord = new ProducerRecord<>( TOPIC,
 					SAMPLE_MESSAGES.get( i % SAMPLE_MESSAGES.size() ) );
 			try {
-				System.out.println( "Sending message: " + SAMPLE_MESSAGES.get( i % SAMPLE_MESSAGES.size() ) );
+				// System.out.println( "Sending message: " + SAMPLE_MESSAGES.get( i % SAMPLE_MESSAGES.size() ) );
 				producer.send( producerRecord );
 			} catch ( Exception e ) { // TODO Better way to abort and ignore when there's an exception?
 				e.printStackTrace();
