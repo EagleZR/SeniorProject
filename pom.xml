@@ -47,9 +47,9 @@
     </properties>
 
     <build>
-        <sourceDirectory>${project.basedir}/src/main/java/ksu.fall2018.seniorproject.group3.SeniorProject
+        <sourceDirectory>${project.basedir}/src/main/java/
         </sourceDirectory>
-        <testSourceDirectory>${project.basedir}/src/test/java/ksu.fall2018.seniorproject.group3.SeniorProject
+        <testSourceDirectory>${project.basedir}/src/test/java/
         </testSourceDirectory>
 
         <plugins>
